@@ -2,4 +2,4 @@ from Shortner.shortner import shortner
 
 sh = shortner()
 
-sh.login(username='rajat', password='vishwa')
+sh.register(username='r', password='vishwa')
