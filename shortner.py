@@ -1,3 +1,5 @@
-from flask import Flask
+import mysql.connector
 
-print("UNDER CONSTRUCTION")
+connection = mysql.connector.connect()
+
+print(connection)
