@@ -2,4 +2,6 @@ from Shortner.shortner import shortner
 
 sh = shortner()
 
-sh.register(username='r', password='vishwa')
+url = "www.instagram.com"
+
+print(sh.shorten(url=url))
