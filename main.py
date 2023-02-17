@@ -1,15 +1,15 @@
-from Shortner.shortner import shortner
+import asyncio
 
-sh = shortner()
+async def process_command(command):
+    print(f"Received command: {command}")
 
-sh.login(username='rajat', password='vishwa')
+async def read_commands():
+    while True:
+        command = input("Enter command: ")
+        await process_command(command)
 
-print(sh.list_urls())
+async def main():
+    await read_commands()
 
-url = "www.instagram.com"
-short = sh.shorten(url=url)
-print(short)
-
-print(sh.list_urls())
-
-print(sh.list_urls())
+if __name__ == '__main__':
+    asyncio.run(main())

@@ -17,8 +17,9 @@ def redirect_to_original(short_url):
     query = f"SELECT long_url FROM urls WHERE short_url = ?"
     cursor.execute(query, (short_url,))
 
-    long_url = cursor.fetchone()[0]
-    if long_url is not None:
+    res = cursor.fetchone()
+    if res is not None:
+        long_url = res[0]
         if long_url.find("http://") != 0 and long_url.find("https://") != 0:
             long_url = "https://" + long_url
         return redirect(long_url)
@@ -31,6 +32,7 @@ def start_server():
     connection = sqlite3.connect('url_data.db', check_same_thread=False)
     cursor = connection.cursor()
     app.run()
+    
 
 start_server()
 
