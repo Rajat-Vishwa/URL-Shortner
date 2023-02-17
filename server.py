@@ -4,9 +4,6 @@ from flask import Flask, redirect
 host_url = 'localhost:5000/{}'
 
 app = Flask(__name__)
-connection = sqlite3.connect('url_data.db', check_same_thread=False)
-cursor = connection.cursor()
-
 
 @app.route('/')
 def home():
@@ -30,6 +27,9 @@ def redirect_to_original(short_url):
 
 
 def start_server():
+    global connection, cursor
+    connection = sqlite3.connect('url_data.db', check_same_thread=False)
+    cursor = connection.cursor()
     app.run()
 
 start_server()
