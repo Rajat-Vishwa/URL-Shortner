@@ -2,20 +2,46 @@ import sqlite3
 import string
 import random
 
-class shortner:
+class Shortner:
     """ shortner class contains all the methods required to use the URL-Shortner
+
         Author: rajat_vishwa
+
         Github: 
+
+        Methods
+        -------
+            shorten(url: str, custom_back_half: str (optional)):
+
+            check_back_half(back_half: str):
+
+            generate_back_half(len: int = 4):
+
+            register(username: str, password: str)
+
+            login(username: str, password: str):
+                Login an existing user
+
+            logout():
+                Resets the user to default(not logged in)
+
+            remove_user(username: str, password: str, delete_urls: bool = False):
+
+            list_urls():
+            
+            delete_url(url: str):
+
+
     """
 
     def __init__(self):
-        self.connect_to_database()
+        self._connect_to_database()
         self._loggedIn = False   # Whether the user is logged in to a valid account.
         self.host_url = "localhost:5000/{}"   # The host url template | Used to convert a back-half to valid URL
 
 
 
-    def connect_to_database(self):
+    def _connect_to_database(self):
         """ Connects to the database
 
             Returns:
@@ -107,9 +133,10 @@ class shortner:
         self.cursor.execute(query, (username, password))
         self.connection.commit()
 
-        query = "DELETE FROM urls WHERE username = ?"
-        self.cursor.execute(query, (username,))
-        self.connection.commit()
+        if delete_urls:
+            query = "DELETE FROM urls WHERE username = ?"
+            self.cursor.execute(query, (username,))
+            self.connection.commit()
         return None
 
 

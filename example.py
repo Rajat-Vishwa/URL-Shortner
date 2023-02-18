@@ -1,10 +1,8 @@
-from Shortner.shortner import shortner
+from Shortner.shortner import Shortner
 
-sh = shortner()
+sh = Shortner()
 
 sh.login(username='rajat', password='vishwa')
-
-
 
 url = "www.instagram.com"
 short = sh.shorten(url=url)
