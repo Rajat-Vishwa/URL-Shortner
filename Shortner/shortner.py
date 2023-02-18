@@ -90,6 +90,29 @@ class shortner:
             return True
 
 
+    def remove_user(self, username: str, password: str, delete_urls = False):
+        """ Remove/delete the user account
+            If delete_urls is set True, delete all of the users urls
+
+                Parameters:
+                    username (str): The username to be deleted
+                    password (str): Password
+                    delete_urls (bool) (optional): Whether to delete the users shortened urls
+
+                Returns:
+                    None
+        """
+
+        query = "DELETE FROM users WHERE username = ? AND password = ?"
+        self.cursor.execute(query, (username, password))
+        self.connection.commit()
+
+        query = "DELETE FROM urls WHERE username = ?"
+        self.cursor.execute(query, (username,))
+        self.connection.commit()
+        return None
+
+
 
     def check_back_half(self, back_half: str):
         """ Checks if a back-half if available
