@@ -38,7 +38,7 @@ else:
 #-------------------------------------------------------------------
 
 # Custom back-half
-bk_hlf = 'abcd'
+bk_hlf = 'a'
 
 url = 'https://youtu.be/dQw4w9WgXcQ'
 
@@ -73,8 +73,10 @@ print('Urls shortened are,')
 for url in urls:
     print(url)
 
-# for url in urls:
-#     sh.delete_url(url[0])
+choice = int(input('Enter 1 to delete all urls or 0 to exit : '))
+if choice == 1:
+    for url in urls:
+        sh.delete_url(url[0])
 
 
 
