@@ -72,7 +72,9 @@ urls = sh.list_urls()
 print('Urls shortened are,')
 for url in urls:
     print(url)
-    sh.delete_url(url[0])
+
+# for url in urls:
+#     sh.delete_url(url[0])
 
 
 

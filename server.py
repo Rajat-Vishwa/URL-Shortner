@@ -1,7 +1,7 @@
 import sqlite3
 from flask import Flask, redirect
 
-host_url = 'localhost:5000/{}'  # The template for the shortened urls.
+host_url = 'http://localhost:5000/{}'  # The template for the shortened urls.
 
 app = Flask(__name__)
 

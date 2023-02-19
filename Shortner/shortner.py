@@ -12,7 +12,7 @@ class Shortner:
     def __init__(self):
         self._connect_to_database()
         self._loggedIn = False   # Whether the user is logged in to a valid account.
-        self.host_url = "localhost:5000/{}"   # The host url template | Used to convert a back-half to valid URL
+        self.host_url = "http://localhost:5000/{}"   # The host url template | Used to convert a back-half to valid URL
 
 
 
@@ -188,8 +188,6 @@ class Shortner:
         else: 
             back_half = self.generate_backhalf()
             shortened_url = self.host_url.format(back_half)   # Convert the back-half to a url using the host_url template
-            if shortened_url.find("http://") != 0 and shortened_url.find("https://") != 0:  
-                shortened_url = "https://" + shortened_url
                 
         self.__add_to_database(url, shortened_url)
         
