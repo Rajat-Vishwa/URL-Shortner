@@ -35,9 +35,9 @@ For a custom back-half,
     url = 'www.youtube.com'
     bk_hlf = 'abcd'
     
-    shortened_url = sh.shorten(url=url, custom_back_half=bk_hlf) # Returns None if the back-half is already taken
+    shortened_url = sh.shorten(url=url, custom_back_half=bk_hlf)
 
-    print(shortened_url)
+    print(shortened_url)  # None if the back-half is already taken
 ```
 
 To manually generate a random back-half with custom size (say 5),
