@@ -1,3 +1,7 @@
+"""
+    This script creates the 'url_data.db' file and adds the urls table to it which contains all the url data.
+"""
+
 import sqlite3
 
 connection = sqlite3.connect('url_data.db')

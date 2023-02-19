@@ -1,3 +1,7 @@
+"""
+    This script creates the 'users' table which contains all the user login data.
+"""
+
 import sqlite3
 
 connection = sqlite3.connect('url_data.db')
