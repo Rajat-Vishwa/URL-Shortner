@@ -19,12 +19,34 @@ Create an instance of the Shortner,
     sh = Shortner()
 ```
 
-To simply shorten a URL with a random back-half,
+To simply shorten a URL with a random back-half (default length 4),
 
 ```python
     url = 'www.youtube.com'
     
     shortened_url = sh.shorten(url=url)
+
+    print(shortened_url)
+```
+
+To manually generate a random back-half with custom length (say 5),
+
+```python
+    url = 'www.youtube.com'
+    bk_hlf = sh.generate_backhalf(len=5)
+    
+    shortened_url = sh.shorten(url=url, custom_back_half=bk_hlf)
+
+    print(shortened_url)
+```
+
+To manually generate a random back-half with custom size (say 5),
+
+```python
+    url = 'www.youtube.com'
+    bk_hlf = sh.generate_backhalf(len=5)
+    
+    shortened_url = sh.shorten(url=url, custom_back_half=bk_hlf)
 
     print(shortened_url)
 ```
@@ -40,13 +62,3 @@ For a custom back-half,
     print(shortened_url)  # None if the back-half is already taken
 ```
 
-To manually generate a random back-half with custom size (say 5),
-
-```python
-    url = 'www.youtube.com'
-    bk_hlf = sh.generate_backhalf(len=5)
-    
-    shortened_url = sh.shorten(url=url, custom_back_half=bk_hlf)
-
-    print(shortened_url)
-```
