@@ -16,7 +16,7 @@ insert = """INSERT INTO urls VALUES("default", "hello", "world")"""
 
 cursor.execute(drop)
 cursor.execute(create)
-cursor.execute(insert)
+#cursor.execute(insert)
 cursor.execute(select)
 
 connection.commit()

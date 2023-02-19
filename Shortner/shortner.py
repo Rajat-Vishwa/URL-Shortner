@@ -188,8 +188,11 @@ class Shortner:
         else: 
             back_half = self.generate_backhalf()
             shortened_url = self.host_url.format(back_half)   # Convert the back-half to a url using the host_url template
-
+            if shortened_url.find("http://") != 0 and shortened_url.find("https://") != 0:  
+                shortened_url = "https://" + shortened_url
+                
         self.__add_to_database(url, shortened_url)
+        
         return shortened_url
 
             
