@@ -2,13 +2,12 @@ from Shortner.shortner import Shortner
 
 sh = Shortner()
 
-sh.login(username='rajat', password='vishwa')
+def main():
+    print("*** URL Shortner ***")
+    print("1) Shorten a url")
+    print("2) Login")
+    print("3) Register")
+    choice = int(input('Enter a choice : '))
+    pass
 
-url = "www.instagram.com"
-short = sh.shorten(url=url)
-
-print(sh.list_urls())
-
-print(sh.delete_url(url='hehe'))
-
-print(sh.list_urls())
+main()

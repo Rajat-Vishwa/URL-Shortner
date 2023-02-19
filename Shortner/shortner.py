@@ -1,4 +1,4 @@
-import sqlite3
+import sqlite3 
 import string
 import random
 
@@ -6,31 +6,6 @@ class Shortner:
     """ shortner class contains all the methods required to use the URL-Shortner
 
         Author: rajat_vishwa
-
-        Github: 
-
-        Methods
-        -------
-            shorten(url: str, custom_back_half: str (optional)):
-
-            check_back_half(back_half: str):
-
-            generate_back_half(len: int = 4):
-
-            register(username: str, password: str)
-
-            login(username: str, password: str):
-                Login an existing user
-
-            logout():
-                Resets the user to default(not logged in)
-
-            remove_user(username: str, password: str, delete_urls: bool = False):
-
-            list_urls():
-            
-            delete_url(url: str):
-
 
     """
 
@@ -74,14 +49,14 @@ class Shortner:
             self._loggedIn = True  
             self._username = username
             return f"=>Logged in as {username}"
-        else:                      #
+        else:
             self._loggedIn = False
             return None
 
 
             
     def logout(self):
-        """Resets the user to default(not logged in)"""
+        """ Resets the user to default(not logged in)"""
 
         self._loggedIn = False
         self._username = None
