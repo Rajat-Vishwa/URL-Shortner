@@ -51,3 +51,25 @@ For a custom back-half,
     print(shortened_url)  # None if the back-half is already taken
 ```
 
+
+#### User login feature
+The shortner class provides the user to login with their registered username and password so that the urls they shorten can be stored with a tag (their username) so that they can view/delete their shortened urls.
+The registered user data gets stored in the 'users' table of 'url_data.db'.
+
+The class has following methods for this,
+
+To register a new user,
+
+```python
+    def register(self, username: str, password: str):
+        """ Register a new user in the 'users' table and automatically login
+            
+                Parameters:
+                    username (str) : The username the user wants
+                    password (str) : Password
+
+                Returns:
+                    True: if user successfully registered
+                    False: if the username if already taken or already logged in
+            """
+ ```
