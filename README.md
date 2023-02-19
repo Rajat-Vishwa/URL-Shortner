@@ -52,6 +52,11 @@ For a custom back-half,
 ```
 
 
+## Server
+The server.py file handles all the requests and redirects the short url to its corresponding destination.
+The server.py file needs to be run in order for the url to be redirected.
+
+
 ## User login feature
 The shortner class provides the user to login with their registered username and password so that the urls they shorten can be stored with a tag (their username) so that they can view/delete their shortened urls.
 The registered user data gets stored in the 'users' table of 'url_data.db'.
